@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>{% block title %}Flame Grill{% endblock %}</title>
+        <link rel="shortcut icon" href="{{ asset('img/flame-shape-svgrepo-com.svg') }}"/>
+        <style> @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100&display=swap'); </style>
+        <script src="//unpkg.com/alpinejs" defer></script>
+
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <nav class="w-full bg-white text-black shadow-2xl">
+        {% block nav %}
+        <div x-data="{ open: false }" class="mx-auto flex max-w-screen-xl flex-col px-4 md:flex-row md:items-center md:justify-between md:px-6 lg:px-8">
+            <div class="flex flex-row items-center justify-between p-4">
+                <a class="flex items-center focus:shadow-outline rounded-lg text-lg font-semibold uppercase tracking-widest text-white focus:outline-none"><?xml version="1.0" encoding="iso-8859-1"?><img class="h-6 mr-3 sm:h-9" <img src="{{ asset('/img/flame-shape-svgrepo-com.svg') }} "/><span class="self-center text-xl font-semibold whitespace-nowrap dark:text-black">FLAME GRILL</span></a>
+                <button class="focus:shadow-outline rounded-lg focus:outline-none md:hidden" @click="open = !open">
+                    <svg fill="currentColor" viewBox="0 0 20 20" class="h-6 w-6">
+                        <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                        <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <div :class="{'flex': open, 'hidden': !open}" class="hidden flex-grow flex-col pb-4 md:flex md:flex-row md:justify-end md:pb-0">
+                <a class="focus:shadow-outline mt-2 rounded-lg bg-transparent px-4 py-2 text-sm font-semibold hover:bg-black hover:text-yellow-400	 focus:bg-gray-200 focus:text-gray-900 focus:outline-none md:mt-0 md:ml-4" href="{{ path('app_index') }}">HOME</a>
+                <a class="focus:shadow-outline mt-2 rounded-lg bg-transparent px-4 py-2 text-sm font-semibold hover:bg-black hover:text-yellow-400	 focus:bg-gray-200 focus:text-gray-900 focus:outline-none md:mt-0 md:ml-4" href="{{ path('app_cardapio') }}">CARDÁPIO</a>
+                <a class="focus:shadow-outline mt-2 rounded-lg bg-transparent px-4 py-2 text-sm font-semibold hover:bg-black hover:text-yellow-400	 focus:bg-gray-200 focus:text-gray-900 focus:outline-none md:mt-0 md:ml-4" href="{{ path('app_contatos') }}">CONTATO</a>
+            </div>
+        </div>
+        {% endblock %}
+    </nav>
+    
+    <body>
+        {% block body %}
+            <style> @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100&display=swap'); </style>
+
+        <div class="bg-no-repeat bg-cover md:bg-center xl:bg-center sm:bg-center w-full shadow-2xl" style="background-image: url('{{asset('/img/pizzaCardapio.jpg')}}')">
+            <div class="max-w-4xl min-w-xl grid gap-4 xs:grid-cols-1 xs:w-full md:grid-cols-1 sm:grid-cols-1 lg:grid-cols-0 h-[300px]"></div>
+        </div>       
+        <section style="background-image: url('{{asset('/img/bege.jpg')}}')" class="h-full w-full">
+        
+        <div class="flex"><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /></div>
+        <div class="h-[100px]"></div>
+
+        <div class="w-full h-full flex col-1 gap-[80px] justify-center">
+            <div class="w-[600px] grid col col-4">
+                <div class="grid col-2 gap-6">
+                    <div>
+                        <h1 class="text-6xl font-['Kanit'] font-bold text-center"> CARDÁPIO </h1>
+                    </div>
+                    <div class="h-[30px]"></div>
+                    <div class="grid sm:grid-cols-3 xs:grid-cols-1 gap-8 text-xl text-center">
+                        <div>
+                            <h1>MÉDIA | 6 FATIAS</h1>
+                        </div>
+                        <div >
+                            <h1>GRANDE | 12 FATIAS</h1>
+                        </div>
+                        <div>
+                            <h1>GIGANTE | 24 FATIAS</h1>
+                        </div>
+                    </div>
+                    <div class="h-[30px]"></div>
+                    <div>
+                        <h1 class="font-['Kanit'] text-3xl font-semibold text-center"> PIZZAS TRADICIONAIS </h1>
+                    </div>
+                </div>
+                <div class="h-[30px]"></div>
+
+                
+                <div class="flex grid-cols-2 text-lg justify-center">
+                    <div class="sm:w-[200px] xs:w-[50px] flex justify-center">
+                        <ul>
+                            <li class="m-[10px]"><h1 class="font-['Kanit'] font-bold "><h1>Calabresa</h1><p class="mt-10[px] text-gray-600">Lorem ipsum</p></li>
+                            <li class="m-[10px]"><h1 class="font-['Kanit'] font-bold "><h1>Frango</h1><p class="mt-10[px] text-gray-600">Lorem ipsum</p></li>
+                            <li class="m-[10px]"><h1 class="font-['Kanit'] font-bold "><h1>Napolitana</h1><p class="mt-10[px] text-gray-600">Lorem ipsum</p></li>
+                        </ul>
+                    </div>
+                    <div class="w-[1px] ml-[95px] mr-[95px] bg-black"></div>
+                    <div class="sm:w-[200px] xs:w-[50px] flex justify-center">
+                        <ul>
+                            <li class="m-[10px]"><h1 class="font-['Kanit'] font-bold "><h1>Mussarela</h1><p class="mt-10[px] text-gray-600">Lorem ipsum</p></li>
+                            <li class="m-[10px]"><h1 class="font-['Kanit'] font-bold "><h1>Romana</h1><p class="mt-10[px] text-gray-600">Lorem ipsum</p></li>
+                            <li class="m-[10px]"><h1 class="font-['Kanit'] font-bold "><h1>Marguerita</h1><p class="mt-10[px] text-gray-600">Lorem ipsum</p></li>
+                            <li class="m-[10px]"><h1 class="font-['Kanit'] font-bold "><h1>4 Queijos</h1><p class="mt-10[px] text-gray-600">Lorem ipsum</p></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="h-[100px]"></div>
+                <div>
+                    <h1 class="font-['Kanit'] text-3xl font-semibold text-center"> PIZZAS ESPECIAIS </h1>
+                </div>
+                <div class="h-[30px]"></div>
+                
+                <div class="flex col-3 text-lg justify-center">
+                    <div class="sm:w-[200px] xs:w-[50px] flex justify-center">
+                        <ul>
+                            <li class="m-[10px]"><h1 class="font-['Kanit'] font-bold "><h1>Frango c/ Catupiry</h1><p class="mt-10[px] text-gray-600">Lorem ipsum</p></li>
+                            <li class="m-[10px]"><h1 class="font-['Kanit'] font-bold "><h1>5 Queijos</h1><p class="mt-10[px] text-gray-600">Lorem ipsum</p></li>
+                            <li class="m-[10px]"><h1 class="font-['Kanit'] font-bold "><h1>Atum</h1><p class="mt-10[px] text-gray-600">Lorem ipsum</p></li>
+                            <li class="m-[10px]"><h1 class="font-['Kanit'] font-bold "><h1>Lombo</h1><p class="mt-10[px] text-gray-600">Lorem ipsum</p></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="w-[1px] ml-[95px] mr-[95px] bg-black"></div>
+                    <div class="sm:w-[200px] xs:w-[50px] flex justify-center">
+                        <ul>
+                            <li class="m-[10px]"><h1 class="font-['Kanit'] font-bold "><h1>Portuguesa</h1><p class="mt-10[px] text-gray-600">Lorem ipsum</p></li>
+                            <li class="m-[10px]"><h1 class="font-['Kanit'] font-bold "><h1>Champignon c/ palmito</h1><p class="mt-10[px] text-gray-600">Lorem ipsum</p></li>
+                            <li class="m-[10px]"><h1 class="font-['Kanit'] font-bold "><h1>Pepperoni</h1><p class="mt-10[px] text-gray-600">Lorem ipsum</p></li>
+                            <li class="m-[10px]"><h1 class="font-['Kanit'] font-bold "><h1>Bacon</h1><p class="mt-10[px] text-gray-600">Lorem ipsum</p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="h-[100px]"></div>
+                <div>
+                    <h1 class="font-['Kanit'] text-3xl font-semibold text-center"> CALZONES </h1>
+                </div>
+                <div class="h-[30px]"></div>
+                
+                <div class="flex col-3 text-lg justify-center">
+                    <div class="sm:w-[200px] xs:w-[50px] flex justify-center">
+                        <ul>
+                            <li class="m-[10px]"><h1 class="font-['Kanit'] font-bold "><h1>Frango</h1><p class="mt-10[px] text-gray-600">Lorem ipsum</p></li>
+                            <li class="m-[10px]"><h1 class="font-['Kanit'] font-bold "><h1>Frango e Champignon</h1><p class="mt-10[px] text-gray-600">Lorem ipsum</p></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="w-[1px] ml-[95px] mr-[95px] bg-black"></div>
+                    <div class="sm:w-[200px] xs:w-[50px] flex justify-center">
+                        <ul>
+                            <li class="m-[10px]"><h1 class="font-['Kanit'] font-bold "><h1>4 Queijos</h1><p class="mt-10[px] text-gray-600">Lorem ipsum</p></li>
+                            <li class="m-[10px]"><h1 class="font-['Kanit'] font-bold "><h1>Lombo e Champignon</h1><p class="mt-10[px] text-gray-600">Lorem ipsum</p></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="h-[100px]"></div>
+                <div>
+                    <h1 class="font-['Kanit'] text-3xl font-semibold text-center"> LASANHAS </h1>
+                </div>
+                <div class="h-[30px]"></div>
+                
+                <div class="flex col-3 text-lg justify-center">
+                    <div class="sm:w-[200px] xs:w-[50px] flex justify-center">
+                        <ul class="w-[197px]">
+                            <li class="m-[10px]"><h1 class="font-['Kanit'] font-bold "><h1>Frango</h1><p class="mt-10[px] text-gray-600">Lorem ipsum</p></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="w-[1px] ml-[95px] mr-[95px] bg-black"></div>
+                    <div class="sm:w-[200px] xs:w-[50px] flex justify-center">
+                        <ul class="w-[197px]">
+                            <li class="m-[10px]"><h1 class="font-['Kanit'] font-bold "><h1>Bolonhesa</h1><p class="mt-10[px] text-gray-600">Lorem ipsum</p></li>
+                            <li class="m-[10px]"><h1 class="font-['Kanit'] font-bold "><h1>Presunto</h1><p class="mt-10[px] text-gray-600">Lorem ipsum</p></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="h-[100px]"></div>
+        <div class="flex"><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /><x-antdesign-line-o style="width: 48px" /></div>
+    </section>
+        {% endblock %}
+    </body>
+    <footer class="p-4 bg-white shadow md:flex text-center md:justify-between md:p-6 dark:bg-black">
+    {% block footer %}
+    <span class="text-base sm:text-center text-white">© 2022  <a>Flame Grill</a>. Todos os direitos reservados. |  Design por Pedro Sudario.
+    </span>
+    <ul class="flex justify-center text-white mt-3  sm:mt-0">
+        <li>
+            <a href="#" class="mr-4 hover:underline md:mr-6 "><x-iconpark-instagram-o style="width: 48px" /></a>
+        </li>
+        <li>
+            <a href="#" class="mr-4 hover:underline md:mr-6"><x-iconpark-facebook-o style="width: 48px" /></a>
+        </li>
+        <li>
+            <a href="#" class="mr-4 hover:underline md:mr-6"><x-fab-whatsapp style="width: 40px" /></a>
+        </li>
+    </ul>
+    {% endblock %}
+</footer>
+
+</html>

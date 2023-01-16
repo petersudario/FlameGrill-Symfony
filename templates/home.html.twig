@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>{% block title %}Flame Grill{% endblock %}</title>
+        <link rel="shortcut icon" href="{{ asset('img/flame-shape-svgrepo-com.svg') }}"/>
+        <style> @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100&display=swap'); </style>
+        <script src="//unpkg.com/alpinejs" defer></script>
+
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <nav class="w-full bg-white text-black shadow-2xl">
+        {% block nav %}
+        <div x-data="{ open: false }" class="mx-auto flex max-w-screen-xl flex-col px-4 md:flex-row md:items-center md:justify-between md:px-6 lg:px-8">
+            <div class="flex flex-row items-center justify-between p-4">
+                <a class="flex items-center focus:shadow-outline rounded-lg text-lg font-semibold uppercase tracking-widest text-white focus:outline-none"><?xml version="1.0" encoding="iso-8859-1"?><img class="h-6 mr-3 sm:h-9" <img src="{{ asset('/img/flame-shape-svgrepo-com.svg') }} "/><span class="self-center text-xl font-semibold whitespace-nowrap dark:text-black">FLAME GRILL</span></a>
+                <button class="focus:shadow-outline rounded-lg focus:outline-none md:hidden" @click="open = !open">
+                    <svg fill="currentColor" viewBox="0 0 20 20" class="h-6 w-6">
+                        <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                        <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <div :class="{'flex': open, 'hidden': !open}" class="hidden flex-grow flex-col pb-4 md:flex md:flex-row md:justify-end md:pb-0">
+                <a class="focus:shadow-outline mt-2 rounded-lg bg-transparent px-4 py-2 text-sm font-semibold hover:bg-black hover:text-yellow-400	 focus:bg-gray-200 focus:text-gray-900 focus:outline-none md:mt-0 md:ml-4" href="{{ path('app_index') }}">HOME</a>
+                <a class="focus:shadow-outline mt-2 rounded-lg bg-transparent px-4 py-2 text-sm font-semibold hover:bg-black hover:text-yellow-400	 focus:bg-gray-200 focus:text-gray-900 focus:outline-none md:mt-0 md:ml-4" href="{{ path('app_cardapio') }}">CARDÁPIO</a>
+                <a class="focus:shadow-outline mt-2 rounded-lg bg-transparent px-4 py-2 text-sm font-semibold hover:bg-black hover:text-yellow-400	 focus:bg-gray-200 focus:text-gray-900 focus:outline-none md:mt-0 md:ml-4" href="{{ path('app_contatos') }}">CONTATO</a>
+            </div>
+        </div>
+        {% endblock %}
+    </nav>
+    <body>
+        {% block body %}
+                
+    <div class="bg-no-repeat p-4 bg-cover md:bg-center xl:bg-center sm:bg-center w-full shadow-2xl" style="background-image: url('{{asset('/img/restaurant-interior.jpg')}}')" >
+        <div class="max-w-4xl min-w-xl grid gap-4 xs:grid-cols-1 xs:w-full md:grid-cols-1 sm:grid-cols-1 lg:grid-cols-0">
+            <div class="flex">
+                <div class="pt-40 pb-40 pl-[30px] pr-[30px] md:pl-10 md:pr-40 sm:pl-5 sm:pr-40 xs:pl-[30px] xs:pr-[30px]">
+                    <div>
+                        <h1 style="text-shadow: 1px 1px 7px #151212" class="text-3xl lg:text-4xl xs:text-3xl text-justify tracking-tight text-white font-['Kanit'] font-medium">    Pizzaria, Foccaceria, buffet livre, rodízio, refrigerantes, vinhos e espumantes.</h1>
+                            <br>
+                        <h2 style="text-shadow: 1px 1px 7px #151212" class="text-white text-justify tracking-tight lg:text-base xs:text-sm ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <div class="flex justify-center relative sm:bottom-[60px] w-full">
+        <div class="grid sm:grid-cols-3 xs:grid-cols-1 sm:mx-[100px]">
+            <div class="bg-red-600 xl:w-[400px] xl:h-[250px] xl:p-[20px] sm:w-[200px] sm:h-[300px] sm:p-[20px]  xs:p-[20px] text-center shadow-2xl  text-white">
+                <a class="flex justify-center"> 
+                    <x-iconpark-birthdaycake-o style="width: 48px;"/>
+                </a>
+                <h1 class="text-xl font-['Kanit'] font-medium">Aniversariante</h1>
+                <br>
+                <P class="font-mono">Aniversariantes com dois ou mais acompanhantes, não pagam.</P>
+            </div>
+            <div class="bg-red-800 xl:w-[400px] xl:h-[250px] xl:p-[20px] sm:w-[200px] sm:h-[300px] sm:p-[20px] xs:p-[20px] text-center shadow-2xl text-white">
+                <a class="flex justify-center"> 
+                    <x-iconpark-babytaste-o style="width: 48px;"/>
+                </a>
+                <h1 class="text-xl font-['Kanit'] font-medium">Crianças</h1>
+                <br>
+                <p class="font-mono">Crianças com até 5 anos de idade não pagam.</p>
+                <p class="font-mono">Espaço kids liberado até 12 anos de idade.</P>
+            </div>
+            <div class="bg-red-600 xl:w-[400px] xl:h-[250px] xl:p-[20px] sm:w-[200px] sm:h-[300px] sm:p-[20px] xs:p-[20px] text-center shadow-2xl text-white">
+                <a class="flex justify-center"> 
+                    <x-iconpark-knifefork-o style="width: 48px"/>
+                </a>
+                <h1 class="text-xl font-['Kanit'] font-medium">Buffet Livre</h1>
+                <br>
+                <P class="font-mono">Buffet livre para pizzas, massas e comida de pratos tradicionais.</P>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-center w-full mb-[60px]">
+        <div class="p-[20px]">
+            <div class="h-full sm:p-[20px] xs:p-[20px] text-center text-xl w-full">
+                <h1 class="text-4xl font-['Kanit'] font-medium">Almoço</h1>
+                <br>
+                <p>Buffet Livre, pratos tradicionais, foccaceria e bebidas.<br>
+                    Segunda-Feira a Sexta-Feira: <strong>R$33,90</strong><br>
+                    Sábado, Domingo e Feriados: <strong>R$63,90</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-center mb-[120px]">
+        <div class="grid xl:grid-cols-4 lg:grid-cols-2 xs:grid-cols-2 md:gap-10 xs:gap-4">
+            <div style="background-image: url('{{asset('/img/prato1.jpg')}}')" class="bg-center bg-no-repeat bg-cover md:w-[255px] md:h-[333px] xs:w-[140px] xs:h-[233px] 2xs:w-[180px] 2xs:h-[233px] text-center shadow-xl text-white">
+            </div>
+            <div style="background-image: url('{{asset('/img/prato2.jpg')}}')" class="bg-center bg-no-repeat bg-cover md:w-[255px] md:h-[333px] xs:w-[140px] xs:h-[233px] 2xs:w-[180px] 2xs:h-[233px] text-center shadow-xl text-white">
+            </div>
+            <div style="background-image: url('{{asset('/img/prato3.jpg')}}')" class="bg-center bg-no-repeat bg-cover md:w-[255px] md:h-[333px] xs:w-[140px] xs:h-[233px] 2xs:w-[180px] 2xs:h-[233px] text-center shadow-xl text-white">
+            </div>
+            <div style="background-image: url('{{asset('/img/prato4.jpg')}}')" class="bg-center bg-no-repeat bg-cover md:w-[255px] md:h-[333px] xs:w-[140px] xs:h-[233px] 2xs:w-[180px] 2xs:h-[233px] text-center shadow-xl text-white">
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-center w-full mt-[30px] pb-[30px] bg-amber-50	">
+        <div class="p-[20px]">
+            <div class="h-full sm:p-[20px] xs:p-[20px] text-center text-black text-xl w-full">
+                <h1 class="text-4xl font-['Kanit'] font-medium">Jantar</h1>
+                <br>
+                <p>Buffet Livre, pizzas, pratos tradicionais, foccaceria e bebidas.
+                    <br>
+                    Domingo a Quinta-Feira: <strong>$57,90</strong>
+                    <br>
+                    Sexta-Feira e Sábado: <strong>R$63,90</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-center pb-[120px] bg-amber-50">
+        <div class="grid xl:grid-cols-4 lg:grid-cols-2 xs:grid-cols-2 md:gap-10 xs:gap-4">
+            <div style="background-image: url('{{asset('/img/pizza.jpg')}}')" class="bg-center bg-no-repeat bg-cover md:w-[255px] md:h-[333px] xs:w-[140px] xs:h-[233px] 2xs:w-[180px] 2xs:h-[233px] text-center shadow-xl text-white">
+            </div>
+            <div style="background-image: url('{{asset('/img/frango.jpg')}}')" class="bg-center bg-no-repeat bg-cover md:w-[255px] md:h-[333px] xs:w-[140px] xs:h-[233px] 2xs:w-[180px] 2xs:h-[233px] text-center shadow-xl text-white">
+            </div>
+            <div style="background-image: url('{{asset('/img/macarrao.jpg')}}')" class="bg-center bg-no-repeat bg-cover md:w-[255px] md:h-[333px] xs:w-[140px] xs:h-[233px] 2xs:w-[180px] 2xs:h-[233px] text-center shadow-xl text-white">
+            </div>
+            <div style="background-image: url('{{asset('/img/sides.jpg')}}')" class="bg-center bg-no-repeat bg-cover md:w-[255px] md:h-[333px] xs:w-[140px] xs:h-[233px] 2xs:w-[180px] 2xs:h-[233px] text-center shadow-xl text-white">
+            </div>
+        </div>
+    </div>
+        {% endblock %}
+    </body>
+    <footer class="p-4 bg-white shadow md:flex text-center md:justify-between md:p-6 dark:bg-black">
+{% block footer %}
+    <span class="text-base sm:text-center text-white">© 2022  <a>Flame Grill</a>. Todos os direitos reservados. |  Design por Pedro Sudario.
+    </span>
+    <ul class="flex justify-center text-white mt-3  sm:mt-0">
+        <li>
+            <a href="#" class="mr-4 hover:underline md:mr-6 "><x-iconpark-instagram-o style="width: 48px" /></a>
+        </li>
+        <li>
+            <a href="#" class="mr-4 hover:underline md:mr-6"><x-iconpark-facebook-o style="width: 48px" /></a>
+        </li>
+        <li>
+            <a href="#" class="mr-4 hover:underline md:mr-6"><x-fab-whatsapp style="width: 40px" /></a>
+        </li>
+    </ul>
+    {% endblock %}
+</footer>
+
+</html>
