@@ -1,0 +1,24 @@
+version: "3.7"
+services:
+  DB:
+    image: postgres:latest
+    environment:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: pepoArtorias@@6262
+    ports:
+      - "5432:5432"
+    container_name: postgresql-local
+    volumes:
+      - "/var/run/postgres.sock:/var/run/postgres/postgres.sock"
+      - "/home/myuser/docker-apps/volumes/postgres-data:/var/lib/postgresql/data"
+  pg_admin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin4
+    ports:
+      - "15432:80"
+    environment:
+      - GUNICORN_THREADS=1
+      - PGADMIN_DEFAULT_EMAIL=pepo@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=pepoArtorias6262
+    depends_on:
+      - DB
